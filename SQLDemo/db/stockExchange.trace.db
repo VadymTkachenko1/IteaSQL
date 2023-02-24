@@ -1,0 +1,65 @@
+2023-02-15 21:10:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)"; ожидалось "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)"; expected "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS shares (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+changeProbability INTEGER NOT NULL
+delta INTEGER NOT NULL) [42001-214]
+2023-02-15 21:13:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)"; ожидалось "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)"; expected "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS shares (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+changeProbability INTEGER NOT NULL
+delta INTEGER NOT NULL) [42001-214]
+2023-02-15 21:16:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)\000a"; ожидалось "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)\000a"; expected "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS shares (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+changeProbability INTEGER NOT NULL
+delta INTEGER NOT NULL)
+ [42001-214]
+2023-02-23 22:02:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)\000a"; ожидалось "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS shares (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aname VARCHAR(255) NOT NULL,\000achangeProbability INTEGER NOT NULL\000a[*]delta INTEGER NOT NULL)\000a"; expected "AS, DEFAULT, GENERATED, ON UPDATE, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS shares (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+changeProbability INTEGER NOT NULL
+delta INTEGER NOT NULL)
+ [42001-214]
+2023-02-24 02:40:47 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "CREATE TABLE IF NOT EXISTS traderShareActions (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aoperation INT NOT NULL,\000atrader BIGINT NOT NULL,\000ashareRate DECIMAL NOT NULL)\000a[*]amount BIGINT NOT NULL\000a"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS traderShareActions (\000aid BIGINT AUTO_INCREMENT PRIMARY KEY,\000aoperation INT NOT NULL,\000atrader BIGINT NOT NULL,\000ashareRate DECIMAL NOT NULL)\000a[*]amount BIGINT NOT NULL\000a"; SQL statement:
+CREATE TABLE IF NOT EXISTS traderShareActions (
+id BIGINT AUTO_INCREMENT PRIMARY KEY,
+operation INT NOT NULL,
+trader BIGINT NOT NULL,
+shareRate DECIMAL NOT NULL)
+amount BIGINT NOT NULL
+ [42000-214]
+2023-02-24 03:06:02 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "SHARE" не найден
+Column "SHARE" not found; SQL statement:
+ALTER TABLE traderShareActions ADD FOREIGN KEY (share) REFERENCES shares(id) [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:184)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:214)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:72)
+	at org.h2.command.ddl.AlterTable.update(AlterTable.java:46)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at sql.demo.repository.BaseTable.executeSqlStatement(BaseTable.java:33)
+	at sql.demo.repository.TraderShareActionsRepository.createForeignKeys(TraderShareActionsRepository.java:29)
+	at sql.demo.StockExchangeDB.createTablesAndForeignKeys(StockExchangeDB.java:41)
+	at sql.demo.StockExchangeDB.main(StockExchangeDB.java:46)
